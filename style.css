@@ -1,0 +1,598 @@
+/* =====================================================================
+   RUTA DEL TOROGOZ — style.css
+   Paleta:
+     --verde-trazo   #2D5628  (trazos, texto principal, botones)
+     --blanco        #FFFFFF  (header, tarjetas, footer)
+     --verde-medio   #B5D371  (acentos, franjas)
+     --verde-fondo   #DCF2BE  (fondo general del sitio, verde suave)
+   Tipografías:
+     Rammetto One     -> logotipo
+     Playfair Display -> menú de navegación
+     DM Serif Display -> titulares
+     Jost              -> texto de lectura
+   ===================================================================== */
+
+/* ---------- 1. Variables y reset ---------- */
+:root {
+  --verde-trazo: #2D5628;
+  --blanco: #FFFFFF;
+  --verde-medio: #B5D371;
+  --verde-fondo: #DCF2BE;
+
+  --font-logo: 'Rammetto One', system-ui, sans-serif;
+  --font-menu: 'Playfair Display', Georgia, serif;
+  --font-titular: 'DM Serif Display', Georgia, serif;
+  --font-texto: 'Jost', 'Segoe UI', sans-serif;
+
+  --radio-tarjeta: 14px;
+  --sombra-tarjeta: 0 8px 20px rgba(45, 86, 40, 0.14);
+  --contenedor-ancho: 1180px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-texto);
+  color: var(--verde-trazo);
+  background-color: var(--verde-fondo); /* fondo general de todo el proyecto */
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+ul { list-style: none; margin: 0; padding: 0; }
+
+:focus-visible {
+  outline: 3px solid var(--verde-trazo);
+  outline-offset: 2px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-texto);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  border: 2px solid var(--verde-trazo);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn--primary {
+  background-color: var(--verde-trazo);
+  color: var(--blanco);
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background-color: var(--blanco);
+  color: var(--verde-trazo);
+  transform: translateY(-2px);
+}
+
+/* ---------- 2. Header / Navegación ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--blanco);
+  border-bottom: 1px solid rgba(45, 86, 40, 0.15);
+}
+
+.site-header__bar {
+  max-width: var(--contenedor-ancho);
+  margin-inline: auto;
+  padding: 0.75rem 1.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-header__bar .logo {
+  grid-column: 1;
+}
+
+.site-header__bar .main-nav {
+  grid-column: 2;
+  justify-self: center;
+}
+
+.nav-toggle {
+  grid-column: 3;
+  justify-self: end;
+}
+
+/* --- Logotipo: torogoz + texto curvo Rammetto One --- */
+.logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  flex-shrink: 0;
+}
+
+.logo__mark {
+  position: relative;
+  display: block;
+  width: 62px;
+  height: 62px;
+  margin-top: 18px;
+}
+
+.logo__mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo__ring {
+  position: absolute;
+  inset: 0;
+  width: 96px;
+  height: 96px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.logo__ring text {
+  font-family: var(--font-logo);
+  font-size: 15px;
+  fill: var(--blanco);
+  stroke: var(--verde-trazo);
+  stroke-width: 3px;
+  paint-order: stroke fill;
+  letter-spacing: 1px;
+}
+
+/* --- Navegación principal --- */
+.main-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.main-nav__link {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-menu);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--verde-trazo);
+  font-variant-caps: small-caps; /* primera letra en mayúscula grande, resto en versalitas, igual al diseño */
+  letter-spacing: 0.01em;
+  padding-bottom: 6px;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.main-nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 62%;
+  height: 2px;
+  background-color: var(--verde-trazo);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.main-nav__link:hover,
+.main-nav__link:focus-visible {
+  opacity: 0.75;
+}
+
+.main-nav__link--active::after {
+  transform: scaleX(1);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--verde-trazo);
+  border-radius: 2px;
+}
+
+/* ---------- 3. Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  background-image:
+    linear-gradient(180deg, rgba(20, 40, 15, 0.35) 0%, rgba(20, 40, 15, 0.55) 100%),
+    url('https://picsum.photos/id/1018/1600/1000');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--contenedor-ancho);
+  margin-inline: auto;
+  padding: 4rem 1.5rem;
+  color: var(--blanco);
+  max-width: 680px;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-menu);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+}
+
+.hero__title {
+  font-family: var(--font-titular);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1.1;
+  margin: 0 0 1.1rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.hero__text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0 0 1.8rem;
+  max-width: 46ch;
+}
+
+/* ---------- 4. Lugares destacados (grid de tarjetas) ---------- */
+.places {
+  max-width: var(--contenedor-ancho);
+  margin-inline: auto;
+  padding: 4.5rem 1.5rem 5rem;
+}
+
+.places__intro {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 2.75rem;
+}
+
+.section-eyebrow {
+  font-family: var(--font-menu);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.section-title {
+  font-family: var(--font-titular);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  margin: 0 0 0.75rem;
+}
+
+.section-text {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Grid respeta 3 columnas x 2 filas, como en el diseño de referencia */
+.place-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.place-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--blanco);
+  border: 1.5px solid var(--verde-trazo);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--sombra-tarjeta);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.place-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 26px rgba(45, 86, 40, 0.2);
+}
+
+.place-card__media {
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.place-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.place-card:hover .place-card__media img {
+  transform: scale(1.06);
+}
+
+.place-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.7rem 0.8rem 0.85rem;
+}
+
+.place-card__title {
+  font-family: var(--font-titular);
+  font-weight: 400;
+  font-size: 1.02rem;
+  margin: 0;
+}
+
+.place-card__location {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.76rem;
+  color: var(--verde-trazo);
+  opacity: 0.85;
+  margin: 0;
+}
+
+.place-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.3rem;
+}
+
+.tag {
+  background-color: var(--verde-trazo);
+  color: var(--blanco);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+
+/* ---------- 5. Footer ---------- */
+.site-footer {
+  background-color: var(--blanco);
+  border-top: 1px solid rgba(45, 86, 40, 0.15);
+}
+
+.site-footer__top {
+  max-width: var(--contenedor-ancho);
+  margin-inline: auto;
+  padding: 3.5rem 1.5rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.footer-col h3 {
+  font-family: var(--font-menu);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.9rem;
+}
+
+.footer-col p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.85;
+  max-width: 34ch;
+}
+
+.footer-col--links ul,
+.footer-col--contact ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-col--links a {
+  font-size: 0.95rem;
+  transition: opacity 0.2s ease;
+}
+
+.footer-col--links a:hover {
+  opacity: 0.7;
+}
+
+.footer-col--contact li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+}
+
+.footer-col--contact a:hover {
+  opacity: 0.7;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+
+.footer-logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.footer-logo span {
+  font-family: var(--font-titular);
+  font-size: 1.15rem;
+}
+
+.site-footer__social {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.1rem;
+}
+
+.site-footer__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--verde-trazo);
+  color: var(--blanco);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.site-footer__social a:hover,
+.site-footer__social a:focus-visible {
+  background-color: var(--verde-medio);
+  color: var(--verde-trazo);
+  transform: translateY(-3px);
+}
+
+.site-footer__bottom {
+  border-top: 1px solid rgba(45, 86, 40, 0.12);
+  padding: 1.1rem 1.5rem;
+  text-align: center;
+}
+
+.site-footer__bottom p {
+  font-size: 0.85rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
+
+/* ---------- 6. Responsividad (mobile-first: ajustes desde escritorio hacia abajo) ---------- */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .place-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .site-footer__top {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-col--brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Tablets pequeñas y móviles: aquí activamos el menú tipo hamburguesa */
+@media (max-width: 860px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--blanco);
+    border-bottom: 1px solid rgba(45, 86, 40, 0.15);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .main-nav.is-open {
+    max-height: 320px;
+  }
+
+  .main-nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0.5rem 1.5rem 1.25rem;
+  }
+
+  .main-nav__link {
+    display: block;
+    padding: 0.6rem 0;
+    width: 100%;
+  }
+
+  .hero {
+    min-height: 70vh;
+  }
+
+  .place-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__top {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-col--brand {
+    grid-column: auto;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .footer-col p {
+    max-width: none;
+    margin-inline: auto;
+  }
+
+  .footer-col--links ul,
+  .footer-col--contact ul {
+    align-items: center;
+  }
+
+  .footer-col--contact li {
+    justify-content: center;
+  }
+
+  .site-footer__social {
+    justify-content: center;
+  }
+
+  /* Táctil: se agranda el área de toque de los íconos sociales */
+  .site-footer__social a {
+    width: 44px;
+    height: 44px;
+  }
+}
