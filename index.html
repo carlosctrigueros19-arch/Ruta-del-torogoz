@@ -26,7 +26,7 @@
         <span class="logo__mark">
           <img src="assets/logo-torogoz.jpeg" alt="Torogoz posado sobre una maleta de viaje, símbolo de Ruta del Torogoz">
           <svg class="logo__ring" viewBox="0 0 220 220" aria-hidden="true">
-            <path id="logoArc" d="M 18,150 A 92,92 0 1 1 202,150" fill="none"></path>
+            <path id="logoArc" d="M 15,120 Q 110,200 205,120" fill="none"></path>
             <text>
               <textPath href="#logoArc" startOffset="50%" text-anchor="middle">Ruta del torogoz</textPath>
             </text>
@@ -60,20 +60,11 @@
           Volcanes majestuosos, playas de clase mundial e historia
           viva. Gente increíble te espera. Comienza tu viaje aquí.
         </p>
-        <a href="lugares.html" class="btn btn--primary">
-          Explorar lugares <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-        </a>
       </div>
     </section>
 
     <!-- ===================== LUGARES DESTACADOS ===================== -->
-    <section class="places" id="lugares" aria-labelledby="placesTitle">
-      <div class="places__intro">
-        <p class="section-eyebrow">Destinos favoritos</p>
-        <h2 id="placesTitle" class="section-title">Lugares que enamoran</h2>
-        <p class="section-text">Una probadita de lo que te espera en cada rincón del país: naturaleza, historia y costa, a solo horas de distancia.</p>
-      </div>
-
+    <section class="places" id="lugares" aria-label="Lugares destacados">
       <ul class="place-grid" role="list">
 
         <li class="place-card">
@@ -166,12 +157,44 @@
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
-    <p class="site-footer__copy">© 2026 Ruta del Torogoz | Contacto: <a href="mailto:info@rutadeltorogoz.sv">info@rutadeltorogoz.sv</a> | San Salvador, ES</p>
-    <ul class="site-footer__social" role="list">
-      <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
-      <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a></li>
-      <li><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a></li>
-    </ul>
+    <div class="site-footer__top">
+
+      <div class="footer-col footer-col--brand">
+        <a href="index.html" class="footer-logo">
+          <img src="assets/logo-torogoz.jpeg" alt="Torogoz posado sobre una maleta de viaje, símbolo de Ruta del Torogoz">
+          <span>Ruta del Torogoz</span>
+        </a>
+        <p>Guía viva de los rincones más hermosos de El Salvador: volcanes, playas, historia y naturaleza en un mismo camino.</p>
+      </div>
+
+      <nav class="footer-col footer-col--links" aria-label="Enlaces del sitio">
+        <h3>Enlaces Rápidos</h3>
+        <ul role="list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="lugares.html">Lugares</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col footer-col--contact">
+        <h3>Contacto</h3>
+        <ul role="list">
+          <li><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:info@rutadeltorogoz.sv">info@rutadeltorogoz.sv</a></li>
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> San Salvador, El Salvador</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>© 2026 Ruta del Torogoz. Todos los derechos reservados.</p>
+      <ul class="site-footer__social" role="list">
+        <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a></li>
+        <li><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
   </footer>
 
   <script src="script.js"></script>
