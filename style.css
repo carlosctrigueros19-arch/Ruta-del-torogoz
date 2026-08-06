@@ -614,3 +614,162 @@ ul { list-style: none; margin: 0; padding: 0; }
     height: 44px;
   }
 }
+/* ==========================================================
+   GALERÍA — fondo, tarjetas y paginación
+   ========================================================== */
+
+.gallery-page {
+  background-color: #B5D371;   /* verde claro del fondo */
+  padding: 40px 60px 60px;
+  min-height: 70vh;
+  font-family: 'Jost', sans-serif;
+}
+
+/* Grid 2x2 */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Tarjeta blanca */
+.gallery-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 18px 18px 22px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+.gallery-card:hover{
+  background-color: #f5f5f5fb;
+   transform: translateY(-7px);
+  transition: transform 0.2s ease, box-shadow 0.2 ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-card__title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1f2d1f;
+  margin: 0 0 14px;
+}
+
+.gallery-card__img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Paginación */
+.gallery-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 35px;
+}
+
+.pag-btn {
+  background-color: #3f5d3a;   /* verde oscuro */
+  color: #ffffff;
+  border: none;
+  width: 60px;
+  height: 42px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.pag-btn:hover {
+  background-color: #345031;
+  transform: translateY(-2px);
+}
+
+.pag-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive: 1 columna en pantallas chicas */
+@media (max-width: 768px) {
+  .gallery-page {
+    padding: 30px 20px 40px;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-card__img {
+    height: 200px;
+  }
+}
+/* ==========================================================
+   FOTOS (LIGHTBOX) — fondo oscuro + un solo carrusel visible
+   ========================================================== */
+
+body.fotos-page {
+  background-color: #141414;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Por defecto, todos los carruseles están ocultos */
+body.fotos-page .container {
+  display: none;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* El carrusel activo se muestra */
+body.fotos-page .container.active {
+  display: block;
+}
+
+/* Clase que dispara el fade-in (se agrega unos ms después) */
+body.fotos-page .container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.fotos-page .container h3 {
+  color: #3d3c3c;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+}
+
+body.fotos-page .carousel-item img {
+  width: 100%;
+  aspect-ratio:  9/7;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+body.fotos-page .btn-secondary {
+  display: block;
+  width: fit-content;
+  margin: 25px auto 0;
+  background-color: #3f5d3a;
+  border: none;
+}
+
+body.fotos-page .btn-secondary:hover {
+  background-color: #318129;
+}
