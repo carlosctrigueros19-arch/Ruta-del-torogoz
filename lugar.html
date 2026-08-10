@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruta del Torogoz | Lugar</title>
+  <meta name="description" content="Descubre volcanes, playas de clase mundial e historia viva en el corazón de Centroamérica con Ruta del Torogoz.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&family=Rammetto+One&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__bar">
+
+      <a href="index.html" class="logo" aria-label="Ruta del Torogoz — Inicio">
+        <span class="logo__mark">
+          <img src="assets/img/torogoz_logo_sittioweb (1).png" alt="Torogoz posado sobre una maleta de viaje, símbolo de Ruta del Torogoz">
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Abrir menú de navegación">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="primaryNav" aria-label="Navegación principal">
+        <ul class="main-nav__list">
+          <li><a href="index.html" class="main-nav__link">Inicio</a></li>
+          <li><a href="nosotros.html" class="main-nav__link">Nosotros</a></li>
+          <li><a href="galeria.html" class="main-nav__link">Galería</a></li>
+          <li><a href="lugares.html" class="main-nav__link">Lugares</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <figure class="lugar-hero">
+      <img id="lugar-imagen" src="" alt="">
+    </figure>
+
+    <section class="lugar-detalle">
+      <div class="lugar-detalle__body">
+        <h1 id="lugar-nombre" class="lugar-detalle__titulo"></h1>
+
+        <div class="lugar-detalle__bloque">
+          <h2 class="lugar-detalle__subtitulo">Ubicación</h2>
+          <p id="lugar-ubicacion" class="lugar-detalle__texto"></p>
+        </div>
+
+        <div class="lugar-detalle__bloque">
+          <h2 class="lugar-detalle__subtitulo">Sobre el lugar</h2>
+          <p id="lugar-sobre" class="lugar-detalle__texto"></p>
+        </div>
+
+        <div class="lugar-detalle__bloque">
+          <h2 class="lugar-detalle__subtitulo">¿Qué se puede hacer?</h2>
+          <div id="lugar-actividades" class="lugar-detalle__chips"></div>
+        </div>
+
+        <div class="lugar-detalle__bloque" id="bloque-horario">
+  <h2 id="lugar-horario-titulo" class="lugar-detalle__subtitulo">Horario</h2>
+  <p id="lugar-horario" class="lugar-detalle__texto"></p>
+</div>
+<div class="lugar-detalle__bloque" id="bloque-presupuesto" style="display:none;">
+  <h2 class="lugar-detalle__subtitulo">Presupuesto de comida</h2>
+  <p id="lugar-presupuesto" class="lugar-detalle__texto"></p>
+</div>
+
+<div class="lugar-detalle__bloque" id="bloque-costo">
+  <h2 id="lugar-costo-titulo" class="lugar-detalle__subtitulo">Costo de entrada</h2>
+  <p id="lugar-costo" class="lugar-detalle__texto"></p>
+</div>
+
+
+        <a id="lugar-regresar" href="#" class="btn btn--primary lugar-detalle__volver">
+  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Regresar
+</a>
+    
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__top">
+
+      <div class="footer-col footer-col--brand">
+        <a href="index.html" class="footer-logo">
+          <img src="assets/img/torogoz_logo_sittioweb (1).png" alt="Torogoz posado sobre una maleta de viaje, símbolo de Ruta del Torogoz">
+          <span>Ruta del Torogoz</span>
+        </a>
+        <p>Guía viva de los rincones más hermosos de El Salvador: volcanes, playas, historia y naturaleza en un mismo camino.</p>
+      </div>
+
+      <nav class="footer-col footer-col--links" aria-label="Enlaces del sitio">
+        <h3>Enlaces Rápidos</h3>
+        <ul role="list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="lugares.html">Lugares</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col footer-col--contact">
+        <h3>Contacto</h3>
+        <ul role="list">
+          <li><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:info@rutadeltorogoz.sv">info@rutadeltorogoz.sv</a></li>
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> San Salvador, El Salvador</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>© 2026 Ruta del Torogoz. Todos los derechos reservados.</p>
+      <ul class="site-footer__social" role="list">
+        <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a></li>
+        <li><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="scrip.js"></script>
+  <script src="Script.js/fundamentos.js"></script>
+</body>
+</html>

@@ -112,63 +112,58 @@ ul { list-style: none; margin: 0; padding: 0; }
   justify-self: end;
 }
 
-/* --- Logotipo: torogoz + texto curvo Rammetto One --- */
+/* --- Logotipo: una sola imagen (el pájaro, la maleta y el texto "Ruta del
+   Torogoz" ya vienen dibujados dentro del archivo). El logo queda ENTERO
+   dentro del header: se encierra en una caja de máximo 130x130px y
+   "object-fit: contain" escala la imagen completa para que quepa entera
+   ahí adentro, sin recortarla ni desbordarse. */
 .logo {
+  margin-left: -1.3rem;   /* ajusta el número: más negativo = más a la izquierda */
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 96px;
-  height: 96px;
+  width: 130px;
+  height: 95px;
+  max-width: 130px;
+  max-height: 95;
   flex-shrink: 0;
 }
 
 .logo__mark {
   position: relative;
   display: block;
-  width: 62px;
-  height: 62px;
-  margin-top: 18px;
+  width: 100%;
+  height: 100%;
 }
 
 .logo__mark img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  object-position: center;
 }
 
+/* El svg .logo__ring ya no se usa: si alguna página todavía lo trae en el
+   HTML (de una prueba de un compañero), lo dejamos oculto para que no
+   rompa el tamaño del header. */
 .logo__ring {
-  position: absolute;
-  inset: 0;
-  width: 96px;
-  height: 96px;
-  overflow: visible;
-  pointer-events: none;
-}
-
-.logo__ring text {
-  font-family: var(--font-logo);
-  font-size: 15px;
-  fill: var(--blanco);
-  stroke: var(--verde-trazo);
-  stroke-width: 3px;
-  paint-order: stroke fill;
-  letter-spacing: 1px;
+  display: none;
 }
 
 /* --- Navegación principal --- */
 .main-nav__list {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 6rem;
 }
 
 .main-nav__link {
   position: relative;
   display: inline-block;
   font-family: var(--font-menu);
-  font-weight: 700;
-  font-size: 1.3rem;
+  font-weight: 900;
+  font-size: 1.8rem;
   color: var(--verde-trazo);
   font-variant-caps: small-caps; /* primera letra en mayúscula grande, resto en versalitas, igual al diseño */
   letter-spacing: 0.01em;
@@ -237,7 +232,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   position: relative;
   z-index: 2;
   max-width: var(--contenedor-ancho);
-  margin-inline: auto;
+  margin-inline: 9rem 0;
   padding: 4rem 1.5rem;
   color: var(--blanco);
   max-width: 820px;
@@ -247,26 +242,28 @@ ul { list-style: none; margin: 0; padding: 0; }
   font-family: var(--font-menu);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: 1.15rem;
+  font-size: 1.7rem;
   font-weight: 700;
-  margin: 0 0 1.6rem;
+  color: var(--blanco);
+  margin: 0 0 0.9rem;
 }
 
 .hero__title {
   font-family: var(--font-titular);
   font-weight: 400;
-  font-size: clamp(1.5rem, 4.6vw, 3.2rem);
+  font-size: clamp(2rem, 4.6vw, 3.5rem);
   line-height: 1.1;
-  margin: 0 0 0.6rem;
+  color: var(--blanco);
+  margin: 0 0 0.9rem;
   white-space: nowrap;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 }
 
 .hero__text {
   font-size: 1.2rem;
-  line-height: 1.6;
-  margin: 0 0 1.8rem;
-  max-width: 46ch;
+  line-height: 1.4;
+  color: var(--blanco);
+  margin: 0 0 0.9rem;
 }
 
 /* ---------- 4. Lugares destacados (grid de tarjetas) ---------- */
@@ -468,8 +465,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 .footer-logo img {
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  height: 56px;
   object-fit: contain;
 }
 
@@ -480,13 +477,15 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 .site-footer__bottom {
+  max-width: var(--contenedor-ancho);
+  margin-inline: auto;
   border-top: 1px solid rgba(45, 86, 40, 0.15);
   padding: 1.4rem 1.5rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   gap: 0.9rem;
-  text-align: center;
 }
 
 .site-footer__bottom p {
@@ -612,13 +611,17 @@ ul { list-style: none; margin: 0; padding: 0; }
     justify-content: center;
   }
 
+  .site-footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
   /* Táctil: se agranda el área de toque de los íconos sociales */
   .site-footer__social a {
     width: 44px;
     height: 44px;
   }
 }
-<<<<<<< HEAD
 
 /* =====================================================================
    7. PÁGINA NOSOTROS
@@ -824,16 +827,17 @@ ul { list-style: none; margin: 0; padding: 0; }
     flex-direction: column;
     text-align: center;
   }
-=======
-/* ==========================================================
-   GALERÍA — fondo, tarjetas y paginación
-   ========================================================== */
+}
+
+/* =====================================================================
+   8. PÁGINA GALERÍA
+   ===================================================================== */
 
 .gallery-page {
-  background-color: #B5D371;   /* verde claro del fondo */
+  background-color: var(--verde-medio);
   padding: 40px 60px 60px;
   min-height: 70vh;
-  font-family: 'Jost', sans-serif;
+  font-family: var(--font-texto);
 }
 
 /* Grid 2x2 */
@@ -847,27 +851,29 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 /* Tarjeta blanca */
 .gallery-card {
-  background-color: #ffffff;
+  background-color: var(--blanco);
   border-radius: 16px;
   padding: 18px 18px 22px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--sombra-tarjeta);
   text-align: center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease;
 }
-.gallery-card:hover{
+
+.gallery-card:hover {
   background-color: #f5f5f5fb;
-   transform: translateY(-7px);
-  transition: transform 0.2s ease, box-shadow 0.2 ease;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(-7px);
+  box-shadow: 0 14px 26px rgba(45, 86, 40, 0.2);
 }
 
 .gallery-card__title {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-menu);
   font-weight: 600;
   font-size: 1.05rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #1f2d1f;
+  color: var(--verde-trazo);
   margin: 0 0 14px;
 }
 
@@ -888,8 +894,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 .pag-btn {
-  background-color: #3f5d3a;   /* verde oscuro */
-  color: #ffffff;
+  background-color: var(--verde-trazo);
+  color: var(--blanco);
   border: none;
   width: 60px;
   height: 42px;
@@ -923,9 +929,10 @@ ul { list-style: none; margin: 0; padding: 0; }
     height: 200px;
   }
 }
-/* ==========================================================
-   FOTOS (LIGHTBOX) — fondo oscuro + un solo carrusel visible
-   ========================================================== */
+
+/* =====================================================================
+   9. PÁGINA FOTOS (LIGHTBOX) — fondo oscuro + un solo carrusel visible
+   ===================================================================== */
 
 body.fotos-page {
   background-color: #141414;
@@ -962,13 +969,13 @@ body.fotos-page .container.show {
 body.fotos-page .container h3 {
   color: #3d3c3c;
   text-align: center;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-menu);
   margin-bottom: 20px;
 }
 
 body.fotos-page .carousel-item img {
   width: 100%;
-  aspect-ratio:  9/7;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 12px;
 }
@@ -977,10 +984,94 @@ body.fotos-page .btn-secondary {
   display: block;
   width: fit-content;
   margin: 25px auto 0;
-  background-color: #3f5d3a;
+  background-color: var(--verde-trazo);
   border: none;
 }
 
 body.fotos-page .btn-secondary:hover {
   background-color: #318129;
+}
+/* =====================================================================
+   10. PÁGINA LUGAR (detalle de un solo lugar)
+   ===================================================================== */
+
+.lugar-hero {
+  margin: 0;
+  width: 100%;
+  height: 80vh;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.lugar-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lugar-detalle {
+  background-color: var(--verde-fondo);
+  padding: 3rem 1.5rem 4.5rem;
+}
+
+.lugar-detalle__body {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.lugar-detalle__titulo {
+  font-family: var(--font-titular);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  color: var(--verde-trazo);
+  margin: 0 0 1.75rem;
+}
+
+.lugar-detalle__bloque {
+  margin-bottom: 1.6rem;
+}
+
+.lugar-detalle__subtitulo {
+  font-family: var(--font-menu);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--verde-trazo);
+  margin: 0 0 0.5rem;
+}
+
+.lugar-detalle__texto {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--verde-trazo);
+  opacity: 0.9;
+  margin: 0;
+}
+
+.lugar-detalle__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.lugar-detalle__chips .chip {
+  background-color: var(--blanco);
+  border: 1.5px solid var(--verde-trazo);
+  color: var(--verde-trazo);
+}
+
+.lugar-detalle__volver {
+  margin-top: 1rem;
+}
+
+@media (max-width: 860px) {
+  .lugar-hero {
+    height: 32vh;
+    min-height: 220px;
+  }
+}
+.lugar-detalle__bloque--aviso {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
 }

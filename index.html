@@ -6,20 +6,17 @@
   <title>Ruta del Torogoz | Inicio</title>
   <meta name="description" content="Descubre volcanes, playas de clase mundial e historia viva en el corazón de Centroamérica con Ruta del Torogoz.">
 
-  <!-- Tipografías: Rammetto One (logotipo), Playfair Display (menú), DM Serif Display (titulares) y Jost (texto de lectura) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&family=Rammetto+One&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome para iconografía (pines de ubicación, redes sociales, flecha) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ===================== HEADER / NAVEGACIÓN ===================== -->
- <header class="site-header">
+  <header class="site-header">
     <div class="site-header__bar">
 
       <a href="index.html" class="logo" aria-label="Ruta del Torogoz — Inicio">
@@ -44,7 +41,6 @@
   </header>
 
   <main>
-    <!-- ===================== HERO ===================== -->
     <section class="hero">
       <div class="hero__overlay" aria-hidden="true"></div>
       <div class="hero__content">
@@ -57,11 +53,10 @@
 </div>
     </section>
 
-    <!-- ===================== LUGARES DESTACADOS ===================== -->
     <section class="places" id="lugares" aria-label="Lugares destacados">
       <ul class="place-grid" role="list">
 
-        <li class="place-card">
+        <li class="place-card" data-lugar="puerta-del-diablo">
           <figure class="place-card__media">
             <img src="assets/img/Lu_Puertadeldiablo.avif" alt="Vista panorámica de la formación rocosa Puerta del Diablo al atardecer">
           </figure>
@@ -77,7 +72,7 @@
           </div>
         </li>
 
-        <li class="place-card">
+        <li class="place-card" data-lugar="joya-de-ceren">
           <figure class="place-card__media">
             <img src="assets/img/Lu_joyaceren.jpg" alt="Ruinas arqueológicas mayas del sitio Joya de Cerén">
           </figure>
@@ -92,7 +87,7 @@
           </div>
         </li>
 
-        <li class="place-card">
+        <li class="place-card" data-lugar="lago-de-coatepeque">
           <figure class="place-card__media">
             <img src="assets/img/Lu_lagocaotepeque.jpg" alt="Aguas turquesa del lago de Coatepeque rodeado de montañas">
           </figure>
@@ -107,7 +102,7 @@
           </div>
         </li>
 
-        <li class="place-card">
+        <li class="place-card" data-lugar="volcan-de-santa-ana">
           <figure class="place-card__media">
             <img src="assets/img/Lu_volcansantaAna.avif" alt="Cráter del volcán de Santa Ana con laguna de azufre">
           </figure>
@@ -122,7 +117,7 @@
           </div>
         </li>
 
-        <li class="place-card">
+        <li class="place-card" data-lugar="playa-punta-roca">
           <figure class="place-card__media">
             <img src="assets/img/Lu_Playapuntaroca.jpg" alt="Atardecer sobre las olas de Playa Punta Roca">
           </figure>
@@ -137,7 +132,7 @@
           </div>
         </li>
 
-        <li class="place-card">
+        <li class="place-card" data-lugar="playa-los-cobanos">
           <figure class="place-card__media">
             <img src="assets/img/Lu_PlayaLoscobanos.jpg" alt="Costa de arena de Playa Los Cóbanos con aguas tranquilas">
           </figure>
@@ -156,13 +151,12 @@
     </section>
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
     <div class="site-footer__top">
 
       <div class="footer-col footer-col--brand">
         <a href="index.html" class="footer-logo">
-          <img src="assets/logo-torogoz.jpeg" alt="Torogoz posado sobre una maleta de viaje, símbolo de Ruta del Torogoz">
+          <img src="assets/img/torogoz_logo_sittioweb (1).png" alt="Torogoz posado sobre una maleta de viaje, símbolo de Ruta del Torogoz">
           <span>Ruta del Torogoz</span>
         </a>
         <p>Guía viva de los rincones más hermosos de El Salvador: volcanes, playas, historia y naturaleza en un mismo camino.</p>
@@ -198,6 +192,7 @@
     </div>
   </footer>
 
-  <script src="scrip.js"></script>
+ <script src="scrip.js"></script>
+  <script src="Script.js/fundamentos.js"></script>
 </body>
 </html>

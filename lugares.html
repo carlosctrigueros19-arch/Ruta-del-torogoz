@@ -3,31 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ruta del Torogoz | Inicio</title>
+  <title>Ruta del Torogoz | Lugares</title>
   <meta name="description" content="Descubre volcanes, playas de clase mundial e historia viva en el corazón de Centroamérica con Ruta del Torogoz.">
 
-  <!-- Tipografías: Rammetto One (logotipo), Playfair Display (menú), DM Serif Display (titulares) y Jost (texto de lectura) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&family=Rammetto+One&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome para iconografía (pines de ubicación, redes sociales, flecha) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ===================== HEADER / NAVEGACIÓN ===================== -->
   <header class="site-header">
     <div class="site-header__bar">
 
       <a href="index.html" class="logo" aria-label="Ruta del Torogoz — Inicio">
         <span class="logo__mark">
           <img src="assets/img/torogoz_logo_sittioweb (1).png" alt="Torogoz posado sobre una maleta de viaje, símbolo de Ruta del Torogoz">
-          <svg class="logo__ring" viewBox="0 0 220 220" aria-hidden="true">
-            <path id="logoArc" d="M 15,120 Q 110,200 205,120" fill="none"></path>
-          </svg>
         </span>
       </a>
 
@@ -47,11 +41,10 @@
   </header>
 
   <main>
-    <!-- ===================== LUGARES DESTACADOS ===================== -->
     <section class="places" id="lugares" aria-label="Lugares destacados">
       <ul class="place-grid" role="list">
 
-        <li class="place-card">
+        <li class="place-card" data-lugar="parque-nacional-el-imposible">
           <figure class="place-card__media">
             <img src="assets/img/Lu_parqueElimposible.jpg" alt="Vista del Parque Nacional El Imposible con vegetación exuberante">
           </figure>
@@ -66,7 +59,7 @@
           </div>
         </li>
 
-        <li class="place-card">
+        <li class="place-card" data-lugar="san-blas">
           <figure class="place-card__media">
             <img src="assets/img/Lu_San-Blas.jpg" alt="Área verde de San Blas con vista a las montañas">
           </figure>
@@ -81,7 +74,7 @@
           </div>
         </li>
 
-        <li class="place-card">
+        <li class="place-card" data-lugar="albania">
           <figure class="place-card__media">
             <img src="assets/img/Lu_Albania.jpg" alt="Vista aérea del laberinto de Albania rodeado de vegetación">
           </figure>
@@ -96,7 +89,7 @@
           </div>
         </li>
 
-        <li class="place-card">
+        <li class="place-card" data-lugar="amapulapa">
           <figure class="place-card__media">
             <img src="assets/img/Lu_Amapulapa.jpg" alt="Aguas turquesas del Parque Recreativo Amapulapa">
           </figure>
@@ -111,7 +104,7 @@
           </div>
         </li>
 
-        <li class="place-card">
+        <li class="place-card" data-lugar="ruta-de-las-flores">
           <figure class="place-card__media">
             <img src="assets/img/Lu_rutadelasflores.jpg" alt="Vista aérea de la carretera de la Ruta de Las Flores entre montañas verdes">
           </figure>
@@ -126,7 +119,7 @@
           </div>
         </li>
 
-        <li class="place-card">
+        <li class="place-card" data-lugar="parque-wtd">
           <figure class="place-card__media">
             <img src="assets/img/Lu_WTD.jpg" alt="Puente colgante de madera en el Parque WTD rodeado de bosque">
           </figure>
@@ -141,7 +134,7 @@
           </div>
         </li>
 
-        <li class="place-card">
+        <li class="place-card" data-lugar="portezuelo">
           <figure class="place-card__media">
             <img src="assets/img/Lu_Portezuelo.jpg" alt="Pueblo portezuelo, centro turístico">
           </figure>
@@ -156,7 +149,7 @@
           </div>
         </li>
 
-        <li class="place-card">
+        <li class="place-card" data-lugar="el-pital">
           <figure class="place-card__media">
             <img src="assets/img/Lu_ElPital.jpg" alt="Recorrido verdoso de la ruta de las flores">
           </figure>
@@ -170,8 +163,8 @@
             </ul>
           </div>
         </li>
-      
-        <li class="place-card">
+
+        <li class="place-card" data-lugar="chorros-de-la-caldera">
           <figure class="place-card__media">
             <img src="assets/img/Lu_Chorrosdelacaldera.webp" alt="Puente colgante de madera en el Parque WTD rodeado de bosque">
           </figure>
@@ -188,8 +181,9 @@
 
       </ul>
     </section>
-</main>
-<footer class="site-footer">
+  </main>
+
+  <footer class="site-footer">
     <div class="site-footer__top">
 
       <div class="footer-col footer-col--brand">
@@ -230,6 +224,7 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+<script src="scrip.js"></script>
+  <script src="Script.js/fundamentos.js"></script>
 </body>
 </html>

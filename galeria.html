@@ -23,9 +23,6 @@
       <a href="index.html" class="logo" aria-label="Ruta del Torogoz — Inicio">
         <span class="logo__mark">
           <img src="assets/img/torogoz_logo_sittioweb (1).png" alt="Torogoz posado sobre una maleta de viaje, símbolo de Ruta del Torogoz">
-          <svg class="logo__ring" viewBox="0 0 220 220" aria-hidden="true">
-            <path id="logoArc" d="M 15,120 Q 110,200 205,120" fill="none"></path>
-          </svg>
         </span>
       </a>
 
@@ -159,8 +156,6 @@
   </main>
   <!-- ============ FIN GALERÍA ============ -->
 
-  <!-- Aquí va tu footer, que ya tienes hecho -->
-
   <script>
     // Paginación: muestra 4 tarjetas (2x2) por página
     const cards = document.querySelectorAll('#galleryGrid .gallery-card');
@@ -186,16 +181,17 @@
     });
 
     const hash = window.location.hash;
-if (hash) {
-  const targetCard = document.querySelector(hash);
-  if (targetCard) {
-    const index = Array.from(cards).indexOf(targetCard);
-    if (index !== -1) currentPage = Math.floor(index / perPage);
-  }
-}
+    if (hash) {
+      const targetCard = document.querySelector(hash);
+      if (targetCard) {
+        const index = Array.from(cards).indexOf(targetCard);
+        if (index !== -1) currentPage = Math.floor(index / perPage);
+      }
+    }
 
     renderPage();
   </script>
+
   <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
     <div class="site-footer__top">
