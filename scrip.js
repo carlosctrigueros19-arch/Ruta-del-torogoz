@@ -2,6 +2,19 @@
 // RUTA DEL TOROGOZ — scrip.js
 // =====================================================================
 
+// ---------- 0. Siempre empezar arriba de la página ----------
+// Por defecto, el navegador recuerda en qué parte de la página estabas
+// (por ejemplo, cerca del footer) y te devuelve a ese mismo punto al
+// volver con "Regresar" o con el botón atrás del navegador. Con esto
+// forzamos que CUALQUIER página del sitio siempre te reciba desde
+// arriba, y que si quieres volver a bajar, lo hagas tú manualmente.
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.addEventListener('pageshow', () => {
+  window.scrollTo(0, 0);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ---------- 1. Menú hamburguesa (móvil) ----------
@@ -50,4 +63,4 @@ document.addEventListener('DOMContentLoaded', () => {
     link.classList.toggle('main-nav__link--active', linkFile === currentFile);
   });
 
-});
+});  

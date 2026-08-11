@@ -131,7 +131,7 @@ const lugares = {
 
   "parque-wtd": {
     nombre: "Parque de Aventuras Surf City Walter Thilo Deininger",
-    imagenBanner: "assets/img/PARWTD-INFOLUG.jpg", // 👈 pon aquí el nombre real de tu foto de banner
+    imagenBanner: "assets/img/PARWTD-INFOLUG(1).jpg", // 👈 pon aquí el nombre real de tu foto de banner
     ubicacion: "Cantón Hacienda San Diego, Km. 55, Carretera Litoral, La Libertad, a unos 39 km de San Salvador.",
     sobreElLugar: "Con más de 1,000 manzanas de reserva natural donadas por el filántropo Walter Thilo Deininger, alberga cerca del 7% de la vegetación del país y tres tipos de bosque: de galería, seco caducifolio y secundario. Forma parte de la estrategia Surf City y combina senderismo, deportes extremos y educación ambiental dentro de un área natural protegida frente a la costa de La Libertad.",
     actividades: ["Canopy y rappel", "Senderismo", "Vía ferrata", "Bici de montaña"],
