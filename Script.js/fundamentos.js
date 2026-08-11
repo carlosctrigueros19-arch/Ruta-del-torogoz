@@ -119,7 +119,7 @@ const lugares = {
 
   "ruta-de-las-flores": {
     nombre: "Ruta De Las Flores",
-    imagenBanner: "assets/img/RUTFLO-INFOLUG.webp", // 👈 pon aquí el nombre real de tu foto de banner
+    imagenBanner: "assets/img/RUTFLO-INFOLUG.jpg", // 👈 pon aquí el nombre real de tu foto de banner
     ubicacion: "Carretera CA-8, entre los departamentos de Sonsonate y Ahuachapán, conectando los pueblos de Nahuizalco, Salcoatitán, Juayúa, Apaneca y Concepción de Ataco.",
     sobreElLugar: "Un recorrido de unos 36 km por la cordillera Apaneca-Ilamatepec que conecta cinco pueblos llenos de color y tradición: Nahuizalco, de fuerte herencia indígena Pipil; Salcoatitán, con su ceiba centenaria; Juayúa, epicentro gastronómico con su famosa feria de los alimentos; Apaneca, tierra de café de altura y la Laguna de Ninfa; y Concepción de Ataco, conocido por sus murales y arte callejero. El nombre nace de las flores silvestres que brotan a los lados del camino, sobre todo entre noviembre y febrero.",
     actividades: ["Ferias gastronómicas", "Pueblos coloridos", "Tours de café", "Murales y artesanías"],
@@ -131,12 +131,51 @@ const lugares = {
 
   "parque-wtd": {
     nombre: "Parque de Aventuras Surf City Walter Thilo Deininger",
-    imagenBanner: "assets/img/PARWTD-INFOLUG.jpeg", // 👈 pon aquí el nombre real de tu foto de banner
+    imagenBanner: "assets/img/PARWTD-INFOLUG.jpg", // 👈 pon aquí el nombre real de tu foto de banner
     ubicacion: "Cantón Hacienda San Diego, Km. 55, Carretera Litoral, La Libertad, a unos 39 km de San Salvador.",
     sobreElLugar: "Con más de 1,000 manzanas de reserva natural donadas por el filántropo Walter Thilo Deininger, alberga cerca del 7% de la vegetación del país y tres tipos de bosque: de galería, seco caducifolio y secundario. Forma parte de la estrategia Surf City y combina senderismo, deportes extremos y educación ambiental dentro de un área natural protegida frente a la costa de La Libertad.",
     actividades: ["Canopy y rappel", "Senderismo", "Vía ferrata", "Bici de montaña"],
     horario: "Miércoles a domingo, de 8:00 a.m. a 4:00 p.m. El sendero \"Camino a la Aventura\" inicia a las 9:00 a.m. (4 horas aprox.) y la \"Ruta de la Mariposa\" a las 10:00 a.m.",
     costo: "Entrada general: $5.00 nacionales, $10.00 extranjeros (incluye senderos). Parqueo liviano: $1.00. Actividades extremas como canopy, rappel o vía ferrata pueden tener costo adicional; confirma tarifas vigentes antes de ir.",
+    regresarA: "lugares.html"   // 👈 sección Lugares
+  },
+
+  "portezuelo": {
+    nombre: "Portezuelo",
+    imagenBanner: "assets/img/PORTEZ-INFOLUG.jpg", // 👈 pon aquí el nombre real de tu foto de banner
+    ubicacion: "Cantón San Juan de Dios, Finca El Portezuelo, Juayúa, departamento de Sonsonate, dentro de la Ruta de las Flores.",
+    sobreElLugar: "Un parque de aventuras al pie de la montaña, con entorno natural apto para campamentos, cabalgatas y caminatas por el bosque. Combina turismo activo con alojamientos temáticos únicos como tipis con fogatas, siendo uno de los destinos más completos del occidente del país.",
+    actividades: ["Bici de montaña", "Cabalgatas", "4X4", "Camping / Tipis"],
+    horario: "Cerrado lunes y martes. Miércoles a viernes: 10:00 a.m. – 5:00 p.m. Fines de semana: 9:00 a.m. – 5:00 p.m. (sábados hasta las 6:00 p.m.).",
+    costo: "$5.00 por persona (consumible en restaurante o atracciones). Atracciones extremas individuales: ~$10.00 c/u, o paquete completo por ~$40.00.",
+    avisoExtraTitulo: "No se permiten alimentos externos",
+    avisoExtra: "El parque cuenta con restaurantes propios, como Tres Tiros.",
+    costoExtra: "$5.00 por persona (mayores de 5 años), descontable en la primera aventura pagada. Actividades adicionales desde $6.00.",
+    regresarA: "lugares.html"   // 👈 sección Lugares
+  },
+
+  "el-pital": {
+    nombre: "Cerro: El Pital",
+    imagenBanner: "assets/img/ELPITA-INFOLUG.jpg", // 👈 pon aquí el nombre real de tu foto de banner
+    ubicacion: "Municipio de San Ignacio, departamento de Chalatenango, en la frontera con Honduras, a unos 12 km de La Palma. Se accede desde San Ignacio, a pie o en pick-up desde Río Chiquito.",
+    sobreElLugar: "El punto más alto de El Salvador, con 2,730 metros sobre el nivel del mar, ubicado en plena frontera entre El Salvador y Honduras. Está rodeado de bosque nuboso, con un clima frío poco común en el país (temperatura promedio de 10°C). Es un lugar de propiedad privada, no administrado por el Estado.",
+    actividades: ["Senderismo", "Peña Rajada", "Camping", "El Mojón"],
+    horario: "Cerrado lunes y martes. Miércoles a viernes: 10:00 a.m. – 5:00 p.m. Fines de semana: 9:00 a.m. – 5:00 p.m. (sábados hasta las 6:00 p.m.).",
+    avisoExtraTitulo: "Lleva ropa abrigada",
+    avisoExtra: "Clima frío (~10°C promedio) y terreno que requiere calzado antideslizante.",
+    costo: "Entrada general: $3.00 por persona. Estacionamiento: $3.00 por vehículo. Campamento: $5.00 por noche. Pick-up turístico desde Río Chiquito: $1.00–$3.00 por persona.",
+    regresarA: "lugares.html"   // 👈 sección Lugares
+  },
+
+  "chorros-de-la-caldera": {
+    nombre: "Chorros de la Caldera",
+    imagenBanner: "assets/img/CHOCAL-INFOLUG.jpg", // 👈 pon aquí el nombre real de tu foto de banner
+    ubicacion: "Cerca de Juayúa, departamento de Sonsonate, dentro de la Ruta de las Flores.",
+    sobreElLugar: "Un sendero que atraviesa cafetales y bosque húmedo hasta conectar una serie de siete caídas de agua que culminan en las piscinas naturales de Los Chorros de la Calera, alimentadas por manantiales que brotan de las paredes de roca. Es un lugar de propiedad privada, con tramos rocosos resbaladizos y ascensos asistidos por cuerdas en algunas cascadas.",
+    actividades: ["Cascadas", "Piscinas naturales", "Senderismo con guía", "Escalada asistida"],
+    avisoTitulo: "Recorrido con guía obligatorio",
+    aviso: "Por ser propiedad privada, con cruces de río y tramos resbaladizos, el recorrido debe hacerse con un guía local certificado.",
+    costo: "Aproximadamente $7.00 por persona por el circuito completo de las 7 Cascadas y Chorros de la Calera (incluye acceso y guía). Las tarifas varían según el operador, confirma directamente.",
     regresarA: "lugares.html"   // 👈 sección Lugares
   }
 
@@ -207,6 +246,32 @@ function pintarLugar() {
       document.getElementById("lugar-presupuesto").textContent = datos.presupuesto;
     } else {
       bloquePresupuesto.style.display = "none";
+    }
+  }
+
+  // Bloque Aviso extra (independiente del horario, ej. reglas del lugar
+  // como "No se permiten alimentos externos"). A diferencia del aviso de
+  // arriba, este NO reemplaza el horario: aparece además, más abajo.
+  const bloqueAvisoExtra = document.getElementById("bloque-aviso-extra");
+  if (bloqueAvisoExtra) {
+    if (datos.avisoExtra) {
+      bloqueAvisoExtra.style.display = "";
+      document.getElementById("lugar-aviso-extra-titulo").textContent = datos.avisoExtraTitulo;
+      document.getElementById("lugar-aviso-extra").textContent = datos.avisoExtra;
+    } else {
+      bloqueAvisoExtra.style.display = "none";
+    }
+  }
+
+  // Bloque Costo extra (una segunda tarifa aparte de la principal,
+  // ej. paquetes de aventura con su propio precio)
+  const bloqueCostoExtra = document.getElementById("bloque-costo-extra");
+  if (bloqueCostoExtra) {
+    if (datos.costoExtra) {
+      bloqueCostoExtra.style.display = "";
+      document.getElementById("lugar-costo-extra").textContent = datos.costoExtra;
+    } else {
+      bloqueCostoExtra.style.display = "none";
     }
   }
 

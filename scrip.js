@@ -1,5 +1,5 @@
 // =====================================================================
-// RUTA DEL TOROGOZ — script.js
+// RUTA DEL TOROGOZ — scrip.js
 // =====================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,20 +24,30 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------- 2. Marca automáticamente el link activo del menú ----------
-  // Compara el archivo de la URL actual con el href de cada link,
-  // así la línea verde de abajo siempre aparece bajo la página en la
-  // que estás (Inicio, Nosotros, Galería o Lugares), sin tocar el HTML.
+  // Compara el archivo de la URL actual con el archivo al que apunta
+  // cada link, así la línea verde de abajo siempre aparece bajo la
+  // página en la que estás (Inicio, Nosotros, Galería o Lugares), sin
+  // tocar el HTML.
+  //
+  // 👉 Antes se comparaba link.getAttribute('href') tal cual estaba
+  // escrito en el HTML contra el nombre de archivo de la URL. Si el
+  // href no coincidía carácter por carácter (mayúsculas, "./", etc.)
+  // la comparación fallaba en silencio y el link nunca se marcaba
+  // como activo. Por eso solo "funcionaba" en index.html.
+  //
+  // Ahora usamos link.pathname: el navegador ya resuelve el href a una
+  // ruta real (sin importar cómo esté escrito), así que la comparación
+  // es mucho más confiable.
   const links = document.querySelectorAll('.main-nav__link');
-  let currentPage = location.pathname.split('/').pop();
-  if (currentPage === '') currentPage = 'index.html'; // si la ruta es la raíz "/"
+
+  let currentFile = location.pathname.split('/').pop().toLowerCase();
+  if (currentFile === '') currentFile = 'index.html';
 
   links.forEach(link => {
-    const linkPage = link.getAttribute('href');
-    if (linkPage === currentPage) {
-      link.classList.add('main-nav__link--active');
-    } else {
-      link.classList.remove('main-nav__link--active');
-    }
+    let linkFile = link.pathname.split('/').pop().toLowerCase();
+    if (linkFile === '') linkFile = 'index.html';
+
+    link.classList.toggle('main-nav__link--active', linkFile === currentFile);
   });
 
 });
