@@ -1001,9 +1001,10 @@ body.fotos-page .container h3 {
 
 body.fotos-page .carousel-item img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  max-height: 85vh;
   object-fit: cover;
   border-radius: 12px;
+  display: block;
 }
 
 body.fotos-page .btn-secondary {
