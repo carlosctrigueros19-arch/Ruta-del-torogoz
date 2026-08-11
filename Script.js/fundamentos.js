@@ -188,7 +188,13 @@ function activarTarjetas() {
 
   tarjetas.forEach((tarjeta) => {
     tarjeta.style.cursor = "pointer";
-    tarjeta.addEventListener("click", () => {
+    tarjeta.addEventListener("click", (evento) => {
+      // Si el clic fue sobre el pin de ubicación (o cualquier otro link
+      // dentro de la tarjeta, como el de Google Maps), deja que ese link
+      // haga lo suyo y NO navegues a la página de detalle del lugar.
+      if (evento.target.closest("a")) {
+        return;
+      }
       const id = tarjeta.dataset.lugar;
       window.location.href = `lugar.html?lugar=${id}`;
     });
